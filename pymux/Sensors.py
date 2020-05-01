@@ -9,10 +9,16 @@ class sensor:
         pass
 
     def listSensor(self):
+        '''
+        lists available sensors on the device.
+        '''
         self.value=t.compute("termux-sensor -l")
         return self.value["output"]
 
     def cleanup(self):
+        '''
+        Performs cleanup releasing sensor resources.
+        '''
         self.clean=t.compute("termux-sensor -c")
         return self.clean["output"]
 
@@ -26,26 +32,33 @@ class sensor:
         '''
         self.sensorname=sensorname
         self.delayvalue=delayvalue
-        self.delayv=t.compute(f"termux-sensor -s {self.sensorname} -d {self.delayvalue}")
- 
-        return self.delayv["output"]
+        if self.sensorname=="":
+            return "provide a list of sensor(s). Example:sensorname=[\"Gravity\",\"RMD\"]"
+        elif len(self.sensorname) == 1:
+            self.sensorname=self.sensorname[0]
+            self.delayvalue=delayvalue
+            self.delayv=t.liveSave(f"termux-sensor -s {self.sensorname} -d {self.delayvalue}")
+        elif len(self.sensorname) > 1:
+            self.delaycmd="termux-sensor -s "+str([x for x in self.sensorname]).replace("[","").replace("]","").replace(" ","")+f"-d {self.delayvalue}"
+            self.disp=t.liveSave(self.delaycmd)
+
 
     def specificSensors(self,sname=""):
         '''
         This is a method to print specific 
         sensor(s) data.
         Argument is either a single sensor
-        of list of sensors.
+        or multiple sensors but in a list.
         '''
         
         self.sname=sname
         if self.sname=="":
-            self.display=t.compute(f"termux-sensor -s")
-            return self.display["output"]
+            return "provide a list of sensor(s). Example:sname=\"Gravity\""
+            
         else:
-            command="termux-sensor -s "+str([x for x in self.sname]).replace("[","").replace("]","").strip()
-            self.display=t.compute(command)
-            return self.display["output"]
+            self.livecmd="termux-sensor -s "+str([x for x in self.sname]).replace("[","").replace("]","").replace(" ","")
+            self.display=t.liveSave(self.livecmd)
+            
 
     
 
@@ -54,4 +67,6 @@ class sensor:
         Method to print sensor data all at once.
         WARNING: Can cause over load to the device.
         '''
-        pass
+        self.show=t.liveSave("termux-sensor -a")
+
+
