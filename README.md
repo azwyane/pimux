@@ -8,7 +8,7 @@
 > can be really useful for IOT projects deploying using your own android phone.
 
 ## Why to use pimux?
-> For every pythonist and ethusiast pymux can really ease harware and sofware
+> For every pythonist and ethusiast pimux can really ease harware and sofware
 > access through termux-api.
 
 ## Special thanks 
@@ -16,7 +16,7 @@
  language(python),termu-api, termux, os(linux), and all others, on whose
  contributions I have been able to make this.
 
-> This project is originally located at [pimux](https://github.com/azwyane/pymux)
+> This project is originally located at [pimux](https://github.com/azwyane/pimux)
 
 
 [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://github.com/azwyane/pymux.git)
@@ -39,12 +39,12 @@
 
 ### Method-1
 
-- Clone this repo to your local machine(termux) using `https://github.com/azwyane/pymux.git`
+- Clone this repo to your local machine(termux) using `https://github.com/azwyane/pimux.git`
 
 Goto to your terminal and type:
 
 ```sh
-git clone https://github.com/azwyane/pymux.git
+git clone https://github.com/azwyane/pimux.git
 ```
 
 ## Run the project
@@ -77,7 +77,7 @@ $from pimux import Sensors    #for sensor data
     - 🍴 Fork this repo!
 
 - Option 2
-    - 👯 Clone this repo to your local machine using `https://github.com/azwyane/pymux.git`
+    - 👯 Clone this repo to your local machine using `https://github.com/azwyane/pimux.git`
 
 ### Step 2
 
@@ -85,12 +85,12 @@ $from pimux import Sensors    #for sensor data
 
 ### Step 3
 
-- 🔃 Create a new pull request using <a href="https://github.com/azwyane/pymux/compare" target="_blank">`https://github.com/azwyane/pymux/compare`</a>.
+- 🔃 Create a new pull request using <a href="https://github.com/azwyane/pymux/compare" target="_blank">`https://github.com/azwyane/pimux/compare`</a>.
 
 
 ---
 
 ###  Found a bug? Missing a specific feature?
 
-Feel free to **file a new issue** with a respective title and description on the the [azwyane/pymux](https://github.com/azwyane/pymux/issues) repository. If you already found a solution to your problem, **I would love to review your pull request**!
+Feel free to **file a new issue** with a respective title and description on the the [azwyane/pimux](https://github.com/azwyane/pymux/issues) repository. If you already found a solution to your problem, **I would love to review your pull request**!
 
