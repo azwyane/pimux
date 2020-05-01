@@ -1,14 +1,147 @@
 from compute import scrip as t
 
-
-def battery():
-    value=t.compute("termux-battery-status")
-    return value["output"]
+class misc():
+    '''
+    The class misc has miscellaneous methods 
+    of termuxa-pi available.
+    Available methods are :
+    battery,
+    brightness,
+    vibrate,
+    contactlist,
+    torch,
+    downloadFile
+    '''
+    def __init__(self):
+        pass
+      
+    def battery(self):
+        '''
+        This method return battery status info.
+        '''
+        self.batteryvalue=t.compute("termux-battery-status")
+        return self.batteryvalue["output"]
         
 
-def brightness(bvalue):
-    value=t.compute(f"termux-brightness {bvalue}")
-    return value["output"]
+    def brightness(self,Brightness):
+        '''
+        Set the brightness of your device.
+        It takes argument Brightness (int)
+        from 0 to 100.
+        '''
+        self.Brightness=Brightness
+        self.brightvalue=t.compute(f"termux-brightness {self.Brightness}")
+        return self.brightvalue["output"]
+
+    def vibrate(self,duration=1000):
+        '''
+        vibrates your phone.
+        Default duration is 1000ms.
+        '''
+        self.duration=duration
+        self.vibratevalue=t.compute(f"termux-vibrate -d {self.duration}")
+        return self.vibratevalue["output"]
+
+
+    def contactlist(self):
+        '''
+        Dumps all contact avalable on the phone.
+        '''
+        self.cvalue=t.compute("termux-contact-list")
+        return self.cvalue["output"]
+
+
+    def torch(self,switch=False):
+        '''
+        Toggles the torch on/off
+        Takes argument as:
+        True: turn on
+        False: turn off
+        '''
+        self.switch=switch
+        if self.switch == False:
+            self.torchvalue=t.compute("termux-torch off")
+            return self.torchvalue["output"]
+        else:
+            self.torchvalue=t.compute("termux-torch on")
+            return self.torchvalue["output"]
+
+
+    def downloadFile(self,description="From termux",title="Download",url=" "):
+        '''
+        This is the method for downloading anything 
+        from the internet.
+        The arguments to be supplied are:
+        - description
+        - title
+        - url
+        '''
+        self.description=description
+        self.title=title
+        self.url=url
+        self.downloadF=t.compute(f"termux-download -t {self.title} {self.url}")
+        return self.downloadF["output"]
+
+
+
+
+class tts():
+    '''
+    This class is for getting tts-engine
+    info and for tts support.
+    There are two methods available:
+    ttsinfo
+    and
+    tts_speak
+    '''
+
+    def __init__(self):
+
+        pass
+
+    def ttsinfo(self):
+        '''
+        Gets tts-engines info as an output.
+        '''
+        self.ttsvalue=t.compute("termux-tts-engines")
+        return self.ttsvalue["output"]
+
+
+    def tts_speak(self,
+            eng="com.google.android.tts",
+            lang="eng",
+            regn="",
+            varient="",
+            pitch=1.0,
+            rate=1.0,
+            stream="",
+            text="Hello from termux"):
+        '''
+        This is a tts-engine api for conversion of text into speech.
+        It has arguments:
+            eng: engine
+            lang: language
+            pitch: pitch
+            rate: ratei
+            text: text to speak
+            #for now this feature isn't set
+            regn: region            
+            varient: varient 
+            stream: stream 
+        for more info visit [termux wiki](https://wiki.termux.com/wiki/Termux-tts-speak)
+        '''
+        
+        self.eng=eng
+        self.lang=lang
+        self.regn=regn
+        self.varient=varient
+        self.pitch=pitch
+        self.rate=rate
+        self.stream=stream
+        self.text=text
+        
+        self.tvalue=t.compute(f"termux-tts-speak -e {self.eng} -l {self.lang} -p {self.pitch} -r {self.rate} {self.text}")
+        return self.tvalue["output"]
 
 class camera:
     '''
@@ -72,17 +205,6 @@ class clipboard:
         return self.value["output"]
 
 
-def sensor(val):
-    if val=="all":
-        value=t.compute("termux-sensor -a")
-        return value["output"]
-   
-    elif val=="list":
-        value=t.compute("termux-sensor -l")
-        return value["output"]
-
-       
-    #elif val=="sensor"
 
 class wifi:
     '''
@@ -118,26 +240,6 @@ class wifi:
         return self.value["output"]
 
 
-def contactlist():
-    value=t.compute("termux-contact-list")
-    return value["output"]
-
-
-def torch(val="off"):
-    value=t.compute(f"termux-torch {val}")
-    return value["output"]
-
-def tts_speak(eng="",
-        lang="",
-        regn="",
-        varient="",
-        pitch="",
-        rate="",
-        stream="",
-        text="Hello from termux"):
-
-    value=t.compute(f"termux-tts-speak {text}")
-    return value["output"]
 
 
 class volume:
@@ -168,13 +270,7 @@ class volume:
         self.value=t.compute(f"termux-volume {stream} {volume}")
         return self.value["output"]
 
-def vibrate(duration=1000):
-    '''
-    vibrates your phone.
-    Default duration is 1000ms.
-    '''
-    value=t.compute(f"termux-vibrate -d {duration}")
-    return value["output"]
+
 
 
 
