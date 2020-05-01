@@ -165,7 +165,7 @@ class volume:
         - stream : in str format
         - volume : in int format
         '''
-        self.value=t.compute(f"termux-ring {stream} {volume}")
+        self.value=t.compute(f"termux-volume {stream} {volume}")
         return self.value["output"]
 
 def vibrate(duration=1000):

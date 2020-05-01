@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pymux", # Replace with your own username
+    name="pymux", 
     version="1.0.0",
     author="Azwane",
     author_email="debianbyte@gmail.com",
