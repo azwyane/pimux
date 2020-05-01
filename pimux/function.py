@@ -1,4 +1,4 @@
-from compute import scrip as t
+from . import scrip as t
 
 class misc():
     '''

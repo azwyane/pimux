@@ -1,13 +1,13 @@
-# pymux
+# pimux
 
-> PYMUX is here, made with :heart:
+> PIMUX is here, made with :heart:
 
-## What is pymux?
-> pymux is a python module created by me to access the termux-api(hardware
+## What is pimux?
+> pimux is a python module created by me to access the termux-api(hardware
 > and software api). To ease the access of these beautiful api's which 
 > can be really useful for IOT projects deploying using your own android phone.
 
-## Why to use pymux?
+## Why to use pimux?
 > For every pythonist and ethusiast pymux can really ease harware and sofware
 > access through termux-api.
 
@@ -16,7 +16,7 @@
  language(python),termu-api, termux, os(linux), and all others, on whose
  contributions I have been able to make this.
 
-> This project is originally located at [pymux](https://github.com/azwyane/pymux)
+> This project is originally located at [pimux](https://github.com/azwyane/pymux)
 
 
 [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://github.com/azwyane/pymux.git)
@@ -51,8 +51,8 @@ git clone https://github.com/azwyane/pymux.git
 
 > Now to run the pymux type in your terminal:
 ```
-$from pymux import function   #for misc api
-$from pymux import Sensors    #for sensor data
+$from pimux import function   #for misc api
+$from pimux import Sensors    #for sensor data
 ```
 
 ## Features

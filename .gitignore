@@ -1,6 +1,6 @@
 build
 dist  
-pymux.egg-info
+pimux.egg-info
 venv
 *.pyc
 *~

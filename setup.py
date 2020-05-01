@@ -4,9 +4,9 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pymux", 
-    version="1.0.0",
-    author="Azwane",
+    name="pimux", 
+    version="2.0.0",
+    author="azwane",
     author_email="debianbyte@gmail.com",
     description="A package for accessing termux-api",
     long_description=long_description,
