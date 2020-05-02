@@ -5,22 +5,22 @@
 > PIMUX is here, made with :heart:
 
 ## What is pimux?
-> pimux is a python module created by me to access the termux-api(hardware
+> pimux is a python module created by me, to access the termux-api(hardware
 > and software api). To ease the access of these beautiful api's which 
 > can be really useful for IOT projects deploying using your own android phone.
 
 ## Why to use pimux?
-> For every pythonist and ethusiast pimux can really ease harware and sofware
+> For every pythonist and enthusiast pimux can really ease hardware and software
 > access through termux-api.
 
 ## Special thanks 
  I would like to thank every developer before me who made this beautiful
- language(python),termu-api, termux, os(linux), and all others, on whose
+ language(python),termux-api, termux, os(linux), and all others, on whose
  contributions I have been able to make this.
 
 > This project is originally located at [pimux](https://github.com/azwyane/pimux)
 
-## Table of Contents (Optional)
+## Table of Contents
 - [Requirements](#Requirements)
 - [Installation](#Installation)
 - [Features](#Features)
@@ -28,7 +28,7 @@
 
 ## Requirements
 
-- Temux app
+- Termux app
 - Termux-api (both app and package)
 - Python
 
@@ -48,7 +48,7 @@ Goto to your terminal and type:
 git clone https://github.com/azwyane/pimux.git
 ```
 
-Now add this to site packages by first building by being wherr the setup.py is:
+Now add this to site packages by first building by being where the setup.py is:
 ```
 $ python3 setup.py sdist bdist_wheel
 
@@ -68,7 +68,7 @@ $ python3 -m pip install pimux
 
 ## Run the project
 
-> Now to run the pymux type in your terminal:
+> Now to run the pimux type in your terminal:
 
 ```bash
 $ python

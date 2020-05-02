@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pimux", 
-    version="2.0.0",
+    version="2.0.1",
     author="azwane",
     author_email="debianbyte@gmail.com",
     description="A package for accessing termux-api",
