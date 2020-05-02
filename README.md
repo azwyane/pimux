@@ -57,11 +57,20 @@ $ python3 -m pip install -e <path to pimux main dir>
 
 Finally, you have it installed.
 
+### Method-2
+
+**Install by pip**
+> The stable version is available in the Pypi, which you can download by:
+
+```
+$ python3 -m pip install pimux
+```
+
 ## Run the project
 
 > Now to run the pymux type in your terminal:
 
-```
+```bash
 $ python
 >>> from pimux import function
 
@@ -101,7 +110,7 @@ CLASSES
 
 ```
 
-```
+```bash
 >>> v=function.misc()
 
 >>>help(v)
@@ -135,7 +144,7 @@ class misc(builtins.object)
 ```
 **Also**
 
-```
+```bash
 $ python
 >>>from pimux import Sensors
 
@@ -171,7 +180,7 @@ $ python
      |      lists available sensors on the device.
 ```
 
-```
+```bash
 >>> s=Sensors.sensor()
 >>>help(s)
 class sensor(builtins.object)
@@ -201,14 +210,6 @@ class sensor(builtins.object)
 '{  "sensors": [ ........]}'
 ```
 
-### Method-2
-
-**Install by pip**
-> The stable version is available in the Pypi, which you can download by:
-
-```
-$ python3 -m pip install pimux
-```
 ## Features
 
 > It is a side project of making use of android sensors and IOT projects. 
