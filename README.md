@@ -1,5 +1,7 @@
 # pimux
 
+[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://github.com/azwyane/pymux.git)
+
 > PIMUX is here, made with :heart:
 
 ## What is pimux?
@@ -12,14 +14,11 @@
 > access through termux-api.
 
 ## Special thanks 
- I would like thank every developer before me who made this beautiful
+ I would like to thank every developer before me who made this beautiful
  language(python),termu-api, termux, os(linux), and all others, on whose
  contributions I have been able to make this.
 
 > This project is originally located at [pimux](https://github.com/azwyane/pimux)
-
-
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://github.com/azwyane/pymux.git)
 
 ## Table of Contents (Optional)
 - [Requirements](#Requirements)
@@ -39,6 +38,8 @@
 
 ### Method-1
 
+You can always get the latest version of pimux maintained here in the github.
+> To get the latest feature:
 - Clone this repo to your local machine(termux) using `https://github.com/azwyane/pimux.git`
 
 Goto to your terminal and type:
@@ -47,29 +48,176 @@ Goto to your terminal and type:
 git clone https://github.com/azwyane/pimux.git
 ```
 
+Now add this to site packages by first building by being wherr the setup.py is:
+```
+$ python3 setup.py sdist bdist_wheel
+
+$ python3 -m pip install -e <path to pimux main dir>
+```
+
+Finally, you have it installed.
+
 ## Run the project
 
 > Now to run the pymux type in your terminal:
+
 ```
-$from pimux import function   #for misc api
-$from pimux import Sensors    #for sensor data
+$ python
+>>> from pimux import function
+
+>>>help(function)
+CLASSES
+    builtins.object
+        camera
+        clipboard
+        misc
+        tts
+        volume
+        wifi
+
+    class camera(builtins.object)
+     |  The class camera is for fetching
+     |  camera info or taking picture with the
+     |  camera on the android.
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  camera(self)
+     |      This method returns camera info
+     |      of the android device.It takes no argument.
+     |
+     |  takephoto(self, cid=0, saveas='newimg.jpeg')
+     |      This method is for taking picture from the
+     |      available camera on the device.
+     |      It takes two argument:
+     |      cid : camera id in int default(0)
+     |      saveas: output file name in str format default("newimg.jpeg")
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+
 ```
 
+```
+>>> v=function.misc()
+
+>>>help(v)
+class misc(builtins.object)
+ |  The class misc has miscellaneous methods
+ |  of termuxa-pi available.
+ |  Available methods are :
+ |  battery,
+ |  brightness,
+ |  vibrate,
+ |  contactlist,
+ |  torch,
+ |  downloadFile
+ |
+ |  Methods defined here:
+ |
+ |  __init__(self)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |
+ |  battery(self)
+ |      This method return battery status info.
+ |
+ |  brightness(self, Brightness)
+ |      Set the brightness of your device.
+
+>>>v.vibrate()    This command vibrates your device if not in silent.
+'Done'
+
+>>>v.brightness(Brightness=100) This command sets the brightness to 100.
+'Done'
+```
+**Also**
+
+```
+$ python
+>>>from pimux import Sensors
+
+ >>>help(Sensors)
+ CLASSES
+    builtins.object
+        sensor
+
+    class sensor(builtins.object)
+     |  This is a class that lets to view
+     |  sensor data directly from your android device.
+     |
+     |  Methods defined here:
+     |
+     |  __init__(self)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  allsensors(self)
+     |      Method to print sensor data all at once.
+     |      WARNING: Can cause over load to the device.
+     |
+     |  cleanup(self)
+      Performs cleanup releasing sensor resources.
+     |
+     |  delay(self, sensorname='', delayvalue=3000)
+     |      Method to delay time in milliseconds
+     |      on receiving every new sensor update.
+     |      Arguments:
+     |      sensorname=""
+     |      delayvalue=3000(default)(delayed by 3 sec)
+     |
+     |  listSensor(self)
+     |      lists available sensors on the device.
+```
+
+```
+>>> s=Sensors.sensor()
+>>>help(s)
+class sensor(builtins.object)
+ |  This is a class that lets to view
+ |  sensor data directly from your android device.
+ |
+ |  Methods defined here:
+ |
+ |  __init__(self)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |
+ |  allsensors(self)
+ |      Method to print sensor data all at once.
+ |      WARNING: Can cause over load to the device.
+ |
+ |  cleanup(self)
+ |      Performs cleanup releasing sensor resources.
+ |
+ |  delay(self, sensorname='', delayvalue=3000)
+ |      Method to delay time in milliseconds
+ |      on receiving every new sensor update.
+ |      Arguments:
+ |      sensorname=""
+
+
+>>>s.listSensor()
+'{  "sensors": [ ........]}'
+```
+
+### Method-2
+
+**Install by pip**
+> The stable version is available in the Pypi, which you can download by:
+
+```
+$ python3 -m pip install pimux
+```
 ## Features
 
-❤️&nbsp;
 > It is a side project of making use of android sensors and IOT projects. 
 > It has the feature of termux-api which can be easily used with
 > python projects.
 
-
 ---
 
 ## Contributing
-
-🤝&nbsp;
-
-> To get started...
 
 ### Step 1
 
