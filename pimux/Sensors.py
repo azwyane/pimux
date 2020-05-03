@@ -22,45 +22,53 @@ class sensor:
         self.clean=t.compute("termux-sensor -c")
         return self.clean["output"]
 
-    def delay(self,sensorname="",delayvalue=3000):
+    def delay(self,*args,delayvalue=3000):
         '''
         Method to delay time in milliseconds
         on receiving every new sensor update.
         Arguments:
-        sensorname=""
+        sensorname: takes strings of sensor name
         delayvalue=3000(default)(delayed by 3 sec)
+
+        Example:
+        .delay("Gravity","RMD") gives 3 sec delay output
+        but,
+        .delay("Gravity",5000) causes error for giving the delay
+        give like this:
+        .delay("Gravity",delayvalue=5000)
         '''
-        self.sensorname=sensorname
-        self.delayvalue=delayvalue
-        if self.sensorname=="":
-            return "provide a list of sensor(s). Example:sensorname=[\"Gravity\",\"RMD\"]"
-        elif len(self.sensorname) == 1:
-            self.sensorname=self.sensorname[0]
+        sensorname=tuple(args)
+        if not sensorname:
+            return "Give at least one sensor name. For finding sensor name call listSensor method"
+        else:
             self.delayvalue=delayvalue
-            self.delayv=t.liveSave(f"termux-sensor -s {self.sensorname} -d {self.delayvalue}")
-        elif len(self.sensorname) > 1:
-            self.delaycmd="termux-sensor -s "+str([x for x in self.sensorname]).replace("[","").replace("]","").replace(" ","")+f"-d {self.delayvalue}"
-            self.disp=t.liveSave(self.delaycmd)
+            #sensor_names=""
+            #for sensor_name in sensorname:
+            #    sensor_names=sensor_names+sensor_name+","
+            #print(sensor_names)
+            sensor_names=str(sensorname)[1:-1]
 
+            self.delayv=t.liveSave(f"termux-sensor -s {sensor_names} -d {self.delayvalue}")
+    
+        
 
-    def specificSensors(self,sname=""):
+    def specificSensors(self,*args):
         '''
         This is a method to print specific 
         sensor(s) data.
         Argument is either a single sensor
-        or multiple sensors but in a list.
+        or multiple sensors.
         '''
-        
-        self.sname=sname
-        if self.sname=="":
-            return "provide a list of sensor(s). Example:sname=\"Gravity\""
-            
+        sname=tuple(args)
+        if not sname:
+            return "Give at least one sensor name. For finding sensor name call listSensor method"
         else:
-            self.livecmd="termux-sensor -s "+str([x for x in self.sname]).replace("[","").replace("]","").replace(" ","")
-            self.display=t.liveSave(self.livecmd)
-            
+            sensornames=""
+            for sensorname in sname:
+                sensornames=sensornames+sensorname+","      
+        
+            self.delayv=t.liveSave(f"termux-sensor -s{sensornames}")
 
-    
 
     def allsensors(self):
         '''

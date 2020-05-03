@@ -23,17 +23,17 @@ class misc():
         return self.batteryvalue["output"]
         
 
-    def brightness(self,Brightness):
+    def brightness(self,Brightness: int):
         '''
         Set the brightness of your device.
         It takes argument Brightness (int)
-        from 0 to 100.
+        from 0 to 255.
         '''
         self.Brightness=Brightness
         self.brightvalue=t.compute(f"termux-brightness {self.Brightness}")
         return self.brightvalue["output"]
 
-    def vibrate(self,duration=1000):
+    def vibrate(self,duration: int =1000):
         '''
         vibrates your phone.
         Default duration is 1000ms.
@@ -51,7 +51,7 @@ class misc():
         return self.cvalue["output"]
 
 
-    def torch(self,switch=False):
+    def torch(self,switch: bool =False):
         '''
         Toggles the torch on/off
         Takes argument as:
@@ -67,7 +67,7 @@ class misc():
             return self.torchvalue["output"]
 
 
-    def downloadFile(self,description="From termux",title="Download",url=" "):
+    def downloadFile(self,description: str ="From termux",title: str ="Download",url: str =" "):
         '''
         This is the method for downloading anything 
         from the internet.
@@ -189,7 +189,7 @@ class clipboard:
         '''
         self.value=t.compute("termux-clipboard-get")
         return self.value["output"]
-    def clipboardSet(self,readval=" "):
+    def clipboardSet(self,readval: str =" "):
         '''
         The clipboardSet method is to be used 
         when required to store value in the
