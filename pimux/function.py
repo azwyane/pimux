@@ -10,7 +10,8 @@ class misc():
     vibrate,
     contactlist,
     torch,
-    downloadFile
+    downloadFile,
+    telephonycall
     '''
     def __init__(self):
         pass
@@ -82,7 +83,15 @@ class misc():
         self.downloadF=t.compute(f"termux-download -t {self.title} {self.url}")
         return self.downloadF["output"]
 
-
+    def telephonycall(self,phone_number :str):
+        '''
+        This is the method which takes an 
+        argument phone_number, to which it
+        makes a phone call.
+        '''
+        self.phone_number=phone_number
+        self.calling=t.compute(f"termux-telephony-call {self.phone_number}")
+        return self.calling["output"]
 
 
 class tts():
