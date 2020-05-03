@@ -42,12 +42,11 @@ class sensor:
             return "Give at least one sensor name. For finding sensor name call listSensor method"
         else:
             self.delayvalue=delayvalue
-            #sensor_names=""
-            #for sensor_name in sensorname:
-            #    sensor_names=sensor_names+sensor_name+","
-            #print(sensor_names)
-            sensor_names=str(sensorname)[1:-1]
-
+            sensor_names=""
+            for sensor_name in sensorname:
+                sensor_names=sensor_names+sensor_name+","
+        
+            sensor_names.replace("\'","")              
             self.delayv=t.liveSave(f"termux-sensor -s {sensor_names} -d {self.delayvalue}")
     
         
@@ -66,8 +65,9 @@ class sensor:
             sensornames=""
             for sensorname in sname:
                 sensornames=sensornames+sensorname+","      
-        
-            self.delayv=t.liveSave(f"termux-sensor -s{sensornames}")
+            
+            sensornames.replace("\'","")
+            self.delayval=t.liveSave(f"termux-sensor -s {sensornames}")
 
 
     def allsensors(self):
