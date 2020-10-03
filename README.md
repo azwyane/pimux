@@ -1,6 +1,5 @@
 # pimux
 
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://github.com/azwyane/pymux.git)
 
 > PIMUX is here, made with :heart:
 

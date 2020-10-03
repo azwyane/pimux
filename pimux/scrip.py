@@ -19,10 +19,10 @@ def liveSave(func):
 
 def compute(func):
     '''
-    compute is the function takinga function as an argument
+    compute is the function which takes a function as an argument,
     which need to generate final computed data 
     as an output. It only saves data to return variable
-    not for only the time the program runs.
+    for only the time the program runs.
     '''
     outvalue_tuple = subprocess.Popen(
             func,
