@@ -231,6 +231,23 @@ class sensor(builtins.object)
 
 - HACK AWAY!
 
+> This repo will be having commits in the future. So before applying pull request, its better to keep up with the latest commit and changes.
+
+You can do so by:
+```
+$ git remote add upstream https://github.com/azwyane/pimux.git
+$ git fetch upstream
+$ git checkout master
+$ git merge upstream/master
+
+```
+Then make your wonderful changes and push to your fork by:
+
+```
+$ git push origin master
+
+```
+
 ### Step 3
 
 - 🔃 Create a new pull request using <a href="https://github.com/azwyane/pymux/compare" target="_blank">`https://github.com/azwyane/pimux/compare`</a>.
