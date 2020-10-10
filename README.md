@@ -51,12 +51,18 @@ Now add this to site packages by first building by being where the setup.py is:
 ```
 $ python3 setup.py sdist bdist_wheel
 
-$ python3 -m pip install -e <path to pimux main dir>
+$ python3 -m pip install -e <path to pimux main dir consisting of setup.py>
 ```
 
 Finally, you have it installed.
 
 ### Method-2
+
+*It is recommend to follow this method only when required to have stable release to work
+with pimux*
+
+> IF YOU WANT TO WORK WITH THE LATEST FEATURES OF PIMUX, PLEASE CONSIDER
+> FOLLOWING THE METHOD-1 MENTIONED ABOVE
 
 **Install by pip**
 > The stable version is available in the Pypi, which you can download by:
@@ -215,6 +221,20 @@ class sensor(builtins.object)
 > It has the feature of termux-api which can be easily used with
 > python projects.
 
+### What's new?
+- Added a ready to go web app using pimux and flask (this will develop with new features in coming days)
+> To use pimux through web enter:
+```
+$ python -m pimux.web
+```
+Which will serve web running at http://127.0.0.1:5000/
+
+- Improvised with direct calling method by [Shardul Seth](https://github.com/shajul)
+> Now function and Sensors can be called as:
+```
+>>> import pimux
+>>> pimux.function.misc().vibrate()
+```
 ---
 
 ## Contributing
@@ -260,17 +280,4 @@ $ git push origin master
 Feel free to **file a new issue** with a respective title and description on the the [azwyane/pimux](https://github.com/azwyane/pymux/issues) repository. If you already found a solution to your problem, **I would love to review your pull request**!
 
 
-# What's new?
-- Added a ready to go web app using pimux and flask (this will develop with new features in coming days)
-> To use pimux through web enter:
-```
-$ python -m pimux.web
-```
-Which will serve web running at http://127.0.0.1:5000/
 
-- Improvised with direct calling method by [Shardul Seth](https://github.com/shajul)
-> Now function and Sensors can be called as:
-```
->>> import pimux
->>> import pimux.function.misc().vibrate()
-```
