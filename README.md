@@ -259,3 +259,18 @@ $ git push origin master
 
 Feel free to **file a new issue** with a respective title and description on the the [azwyane/pimux](https://github.com/azwyane/pymux/issues) repository. If you already found a solution to your problem, **I would love to review your pull request**!
 
+
+# What's new?
+- Added a ready to go web app using pimux and flask (this will develop with new features in coming days)
+> To use pimux through web enter:
+```
+$ python -m pimux.web
+```
+Which will serve web running at http://127.0.0.1:5000/
+
+- Improvised with direct calling method by [Shardul Seth](https://github.com/shajul)
+> Now function and Sensors can be called as:
+```
+>>> import pimux
+>>> import pimux.function.misc().vibrate()
+```
