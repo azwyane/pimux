@@ -49,8 +49,6 @@ git clone https://github.com/azwyane/pimux.git
 
 Now add this to site packages by first building by being where the setup.py is:
 ```
-$ python3 setup.py sdist bdist_wheel
-
 $ python3 -m pip install -e <path to pimux main dir consisting of setup.py>
 ```
 
