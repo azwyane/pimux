@@ -11,7 +11,8 @@ class misc():
     contactlist,
     torch,
     downloadFile,
-    telephonycall
+    telephonycall,
+    location
     '''
     def __init__(self):
         pass
@@ -93,6 +94,15 @@ class misc():
         self.calling=t.compute(f"termux-telephony-call {self.phone_number}")
         return self.calling["output"]
 
+    def location(self, provider: str ="gps", request: str ="once"):
+        '''
+        Returns GPS Latitude, Longitude, Altitude, Accuracy, Bearing, Speed, and Provider
+        Arguments to be supplied are:
+        - provider (gps/network/passive)
+        - request (once/last/updates)
+        '''
+        self.locationvalue=t.compute(f"termux-location -p {provider} -r {request}")
+        return self.locationvalue["output"]
 
 class tts():
     '''
